@@ -1,0 +1,16 @@
+version: "3.4"
+
+services:
+  spring-booter-database-service:
+    image: spring-booter-database:latest
+    build:
+      context: ../images/sb-database
+    environment:
+      - MYSQL_ROOT_PASSWORD=rootpassword
+      - MYSQL_DATABASE=database
+      - MYSQL_USER=spring-booter
+      - MYSQL_PASSWORD=password
+#    env_file:
+#      - ${WORKSPACE}/default.env
+    networks:
+      - web

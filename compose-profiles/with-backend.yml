@@ -1,0 +1,18 @@
+version: "3.4"
+
+services:
+  spring-booter-backend-service:
+    image: spring-booter-backend:latest
+    build:
+      context: ../
+    command: ["/opt/wait-for.sh", "spring-booter-database-service:3306", "--", "mvn spring-boot:run -P prod"]
+    depends_on:
+      - spring-booter-database-service
+    environment:
+      - MVN_DB_URL=jdbc:mariadb://spring-booter-database-service:3306/database
+      - MVN_DB_USER=spring-booter
+      - MVN_DB_PWD=password
+#    env_file:
+#      - ${WORKSPACE}/default.env
+    networks:
+      - web

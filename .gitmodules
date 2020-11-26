@@ -1,3 +1,4 @@
 [submodule "spring-booter-submodule"]
 	path = spring-booter-submodule
 	url = https://github.com/mn-io/spring-booter.git
+	branch = master

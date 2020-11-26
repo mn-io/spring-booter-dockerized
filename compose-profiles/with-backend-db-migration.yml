@@ -1,0 +1,5 @@
+version: "3.4"
+
+services:
+  spring-booter-backend-service:
+    command: ["/opt/wait-for.sh", "spring-booter-database-service:3306", "--", "mvn liquibase:update -P prod && mvn spring-boot:run -P prod"]

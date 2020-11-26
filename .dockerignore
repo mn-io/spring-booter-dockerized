@@ -1,0 +1,7 @@
+# ignore all by default
+**
+
+# include relevant files
+!assets
+!spring-booter-submodule/pom.xml
+!spring-booter-submodule/src/
